@@ -2,28 +2,7 @@
   'use strict';
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
 
-  // Research interests: highlight the projects an interest covers
-  var ris = $$('.ri'), projects = $$('.project'), current = null;
-  function apply(tag) {
-    ris.forEach(function (r) {
-      var on = r.getAttribute('data-tag') === tag;
-      r.classList.toggle('on', on);
-      r.querySelector('.ri-btn').setAttribute('aria-pressed', on ? 'true' : 'false');
-    });
-    projects.forEach(function (p) {
-      var hit = tag && (' ' + p.getAttribute('data-tags') + ' ').indexOf(' ' + tag + ' ') >= 0;
-      p.classList.toggle('match', !!hit);
-      p.classList.toggle('dim', !!tag && !hit);
-    });
-  }
-  ris.forEach(function (r) {
-    r.querySelector('.ri-btn').addEventListener('click', function () {
-      current = current === r.getAttribute('data-tag') ? null : r.getAttribute('data-tag');
-      apply(current);
-      var first = current && document.querySelector('.project.match');
-      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
+  var projects = $$('.project');
 
   // Figure tabs inside each project
   projects.forEach(function (p) {

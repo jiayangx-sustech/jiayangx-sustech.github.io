@@ -55,17 +55,12 @@ section{padding:58px 0}section+section{border-top:1px solid var(--rule)}
 .edu-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:18px}
 .edu .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.edu h3{font-size:19px}.edu p{margin:.3em 0}
 .courses{margin-top:12px!important;color:var(--sub);font-size:16px;line-height:1.7}.courses b{color:var(--ink)}
-.hint{color:var(--muted);font-size:15.5px;margin-top:-12px}
 .ri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.ri{border:1px solid var(--rule);border-radius:var(--radius);padding:18px;background:#fff;transition:border-color .2s,box-shadow .2s}
-.ri-btn{all:unset;cursor:pointer;display:block;font-weight:700;font-size:17.5px;margin-bottom:12px}
-.ri-btn:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
-.ri:hover{border-color:var(--muted)}.ri.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--tint)}.ri.on .ri-btn{color:var(--accent-ink)}
+.ri{border:1px solid var(--rule);border-radius:var(--radius);padding:18px;background:#fff}
+.ri h3{font-size:17.5px;margin:0 0 12px}
 
 /* projects */
-.project{border:1px solid var(--rule);border-radius:20px;margin-bottom:34px;background:#fff;box-shadow:var(--shadow);overflow:hidden;
-  transition:opacity .25s,box-shadow .25s,border-color .25s}
-.project.dim{opacity:.3}.project.match{border-color:var(--accent);box-shadow:0 0 0 3px var(--tint),var(--shadow)}
+.project{border:1px solid var(--rule);border-radius:20px;margin-bottom:34px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
 .ptext{padding:34px 40px 8px;max-width:900px}
 .ptext p,.ptext ul{max-width:46em}
 .pnum{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:6px}
@@ -77,22 +72,22 @@ section{padding:58px 0}section+section{border-top:1px solid var(--rule)}
 .points li::before{content:"";position:absolute;left:3px;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--accent)}
 .outcome{font-size:17px}.label{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);margin-right:6px}
 
-/* figure tabs: figures may use the full card width */
-.figarea{border-top:1px solid var(--rule);background:#FBFCFD;padding:18px 0 26px;margin-top:18px}
+/* figure tabs: every figure is shown at the same width (the figure column, max 1200 px = FIGW in build.py) */
+.figarea{border-top:1px solid var(--rule);background:#fff;padding:18px 0 26px;margin-top:18px}
 .tabbar{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:0 20px 18px}
 .tablabel{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:6px}
 .tab .tn{display:inline-block;min-width:1.4em;margin-right:6px;font-variant-numeric:tabular-nums;opacity:.65}
 .tab{all:unset;cursor:pointer;padding:8px 18px;border-radius:999px;font-size:16px;font-weight:600;color:var(--sub);border:1px solid var(--rule);background:#fff}
 .tab:hover{border-color:var(--muted)}.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .tab:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.panel{display:flex;flex-direction:column;align-items:center;gap:10px}
-.fig{margin:0;max-width:100%}
-.fig-btn{all:unset;cursor:zoom-in;display:block;position:relative;max-width:100%}
-.fig img{display:block;max-width:100%;height:auto;background:#fff}
+.panel{display:flex;flex-direction:column;gap:10px;max-width:1200px;margin:0 auto}
+.fig{margin:0;width:100%}
+.fig-btn{all:unset;cursor:zoom-in;display:block;position:relative;width:100%}
+.fig img{display:block;width:100%;height:auto;background:#fff}
 .zoom{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:8px;background:rgba(31,41,51,.75);color:#fff;font-size:16px;
   display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
 .fig-btn:hover .zoom,.fig-btn:focus-visible .zoom{opacity:1}
-.cap{max-width:900px;margin:10px 24px 0;color:var(--sub);font-size:16px;line-height:1.55;text-align:center}.cap b{color:var(--ink)}
+.cap{max-width:948px;margin:10px auto 0;padding:0 24px;color:var(--sub);font-size:16px;line-height:1.55;text-align:center}.cap b{color:var(--ink)}
 
 /* publications */
 .note{color:var(--muted);font-size:15px}
@@ -106,8 +101,8 @@ section{padding:58px 0}section+section{border-top:1px solid var(--rule)}
 /* honors, skills, footer */
 .honor{display:grid;grid-template-columns:1fr auto 130px;gap:18px;padding:12px 0;border-bottom:1px solid var(--rule);align-items:baseline}
 .honor:last-child{border-bottom:0}.hnote{color:var(--accent-ink);font-weight:600;font-size:15.5px}.honor .date{text-align:right}
-.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.skill{border:1px solid var(--rule);border-radius:var(--radius);padding:16px 18px}.skill b{display:block;margin-bottom:10px}
+.skill{display:grid;grid-template-columns:210px 1fr;gap:18px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule)}
+.skill:last-child{border-bottom:0}
 .foot{padding:30px 0 40px;color:var(--muted);font-size:15px;border-top:1px solid var(--rule)}
 
 /* lightbox */
@@ -120,6 +115,6 @@ section{padding:58px 0}section+section{border-top:1px solid var(--rule)}
 .lb-close{top:14px;right:16px}.lb-prev{left:10px;top:50%}.lb-next{right:10px;top:50%}
 .lb-close:hover,.lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,.12)}
 
-@media (max-width:980px){.hero-in,.edu-grid,.skill-grid{grid-template-columns:1fr}.ri-grid{grid-template-columns:1fr 1fr}.ptext{padding:26px 24px 6px}
+@media (max-width:980px){.hero-in,.edu-grid{grid-template-columns:1fr}.ri-grid{grid-template-columns:1fr 1fr}.ptext{padding:26px 24px 6px}
   .hero h1{font-size:40px}.honor{grid-template-columns:1fr auto}.honor .hnote{grid-column:1/-1;order:3}}
-@media (max-width:560px){.ri-grid{grid-template-columns:1fr}.wrap{padding:0 16px}.nav-links{gap:16px}.brand{display:none}.qcard{grid-template-columns:34px 1fr}.qgo{grid-column:2;justify-self:start}}
+@media (max-width:560px){.ri-grid,.skill{grid-template-columns:1fr}.skill{gap:8px}.wrap{padding:0 16px}.nav-links{gap:16px}.brand{display:none}.qcard{grid-template-columns:34px 1fr}.qgo{grid-column:2;justify-self:start}}
